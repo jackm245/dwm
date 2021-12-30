@@ -15,9 +15,18 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = {
-    "DejaVu Sans Mono Nerd Font Complete:size=11",
-    "monospace:size=10"
+// static char *fonts[]          = {
+    // "DejaVu Sans Mono Nerd Font Complete:size=11",
+    // "FontAwesome:size=16",
+    // "monospace:size=10"
+// };
+static char *fonts[]      = {
+    "DejaVuSansMono Nerd Font:style=Medium:size=16;2",
+    "DejavuSansMono Nerd Font:style=Bold:size=16;2",
+    "DejaVuSansMono Nerd Font:size=19;5",
+    "Font Awesome 5 Free:style=Regular:pixelsize=14;1",
+    "Font Awesome 5 Free:style=Solid:pixelsize=14;1",
+    "Font Awesome 5 Brands:pixelsize=14;1",
 };
 static char normbgcolor[]           = "#2b3339";
 static char normbordercolor[]       = "#4b565c";
@@ -260,8 +269,8 @@ static Key keys[] = {
 	{ MODKEY,			XK_Scroll_Lock,	spawn,		SHCMD("killall screenkey || screenkey &") },
 
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 3; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 3; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 10; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 10; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioPrev,		spawn,		SHCMD("mpc prev") },
 	{ 0, XF86XK_AudioNext,		spawn,		SHCMD("mpc next") },
 	{ 0, XF86XK_AudioPause,		spawn,		SHCMD("mpc pause") },
