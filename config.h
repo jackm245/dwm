@@ -160,17 +160,17 @@ static Key keys[] = {
 	TAGKEYS(			XK_9,		8)
 	{ MODKEY,			XK_0,		view,		{.ui = ~0 } },
 	{ MODKEY|ShiftMask,		XK_0,		tag,		{.ui = ~0 } },
-	{ MODKEY,			XK_minus,	spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY|ShiftMask,		XK_minus,	spawn,		SHCMD("pamixer --allow-boost -d 15; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY,			XK_equal,	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY|ShiftMask,		XK_equal,	spawn,		SHCMD("pamixer --allow-boost -i 15; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY,			XK_minus,	spawn,		SHCMD("pamixer --allow-boost -d 5")},
+	{ MODKEY|ShiftMask,		XK_minus,	spawn,		SHCMD("pamixer --allow-boost -d 15")},
+	{ MODKEY,			XK_equal,	spawn,		SHCMD("pamixer --allow-boost -i 5") },
+	{ MODKEY|ShiftMask,		XK_equal,	spawn,		SHCMD("pamixer --allow-boost -i 15") },
 	{ MODKEY,			XK_BackSpace,	spawn,		SHCMD("sysact") },
 	{ MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("sysact") },
 
 	{ MODKEY,			XK_Tab,		view,		{0} },
 	/* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
 	{ MODKEY,			XK_q,		killclient,	{0} },
-	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("sysact") },
+	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("pkill dwm") },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD(TERMINAL " -e sudo nmtui") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook") },
@@ -187,7 +187,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_i,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
 	{ MODKEY,			XK_o,		incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,		XK_o,		incnmaster,     {.i = -1 } },
-	{ MODKEY,			XK_p,			spawn,		SHCMD("mpc toggle") },
+	{ MODKEY,			XK_p,			spawn,		SHCMD("./.scripts/spotify/spotify.sh") },
 	{ MODKEY|ShiftMask,		XK_p,			spawn,		SHCMD("mpc pause ; pauseallmpv") },
 	{ MODKEY,			XK_bracketleft,		spawn,		SHCMD("mpc seek -10") },
 	{ MODKEY|ShiftMask,		XK_bracketleft,		spawn,		SHCMD("mpc seek -60") },
