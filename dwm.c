@@ -632,8 +632,8 @@ cleanup(void)
 		cleanupmon(mons);
 	for (i = 0; i < CurLast; i++)
 		drw_cur_free(drw, cursor[i]);
-	for (i = 0; i < LENGTH(colors); i++)
-		free(scheme[i]);
+    for (i = 0; i < LENGTH(colors); i++)
+        free(scheme[i]);
 	XDestroyWindow(dpy, wmcheckwin);
 	drw_free(drw);
 	XSync(dpy, False);
@@ -1811,9 +1811,9 @@ setup(void)
 	cursor[CurResize] = drw_cur_create(drw, XC_sizing);
 	cursor[CurMove] = drw_cur_create(drw, XC_fleur);
 	/* init appearance */
-	scheme = ecalloc(LENGTH(colors), sizeof(Clr *));
-	for (i = 0; i < LENGTH(colors); i++)
-		scheme[i] = drw_scm_create(drw, colors[i], 3);
+    scheme = ecalloc(LENGTH(colors), sizeof(Clr *));
+    for (i = 0; i < LENGTH(colors); i++)
+        scheme[i] = drw_scm_create(drw, colors[i], 3);
 	/* init bars */
 	updatebars();
 	updatestatus();
